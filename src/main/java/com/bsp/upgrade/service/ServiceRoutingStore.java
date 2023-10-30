@@ -47,18 +47,24 @@ public class ServiceRoutingStore {
     }
 
     @SwitchDataSource("DEV11")
-    public List<Object> allGlobalTrxIdByDateAndServiceNameForDev11(String serviceName, String eventTime) {
-        return repo.allGlobalTrxIdByDateAndServiceName(serviceName, eventTime);
+    public List<Object> allGlobalTrxIdByDateAndServiceNameForDev11(String serviceName, String eventTime ,String key1 ,String key2 ,
+                                                                   String key3 , String key4 , String key5 ) {
+        return repo.allGlobalTrxIdByDateAndServiceName(serviceName, eventTime , key1 ,key2 ,
+                key3 ,  key4 ,  key5);
     }
 
     @SwitchDataSource("STAGE11")
-    public List<Object> allGlobalTrxIdByDateAndServiceNameForStage11(String serviceName, String eventTime) {
-        return repo.allGlobalTrxIdByDateAndServiceName(serviceName, eventTime);
+    public List<Object> allGlobalTrxIdByDateAndServiceNameForStage11(String serviceName, String eventTime ,String key1 ,String key2 ,
+                                                                     String key3 , String key4 , String key5 ) {
+        return repo.allGlobalTrxIdByDateAndServiceName(serviceName, eventTime , key1 ,key2 ,
+                key3 ,  key4 ,  key5);
     }
 
     @SwitchDataSource("PROD11")
-    public List<Object> allGlobalTrxIdByDateAndServiceNameForProd11(String serviceName, String eventTime) {
-        return repo.allGlobalTrxIdByDateAndServiceName(serviceName, eventTime);
+    public List<Object> allGlobalTrxIdByDateAndServiceNameForProd11(String serviceName, String eventTime ,String key1 ,String key2 ,
+                                                                    String key3 , String key4 , String key5 ) {
+        return repo.allGlobalTrxIdByDateAndServiceName(serviceName, eventTime , key1 ,key2 ,
+                key3 ,  key4 ,  key5);
     }
 
     @SwitchDataSource("DEV11")

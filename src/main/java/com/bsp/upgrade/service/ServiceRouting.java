@@ -57,17 +57,21 @@ public class ServiceRouting implements ServiceList {
     }
 
     @Override
-    public List<Object> allGlobalTrxIdByDateAndServiceName(String serviceName, String eventTime, String databaseName) {
+    public List<Object> allGlobalTrxIdByDateAndServiceName(String serviceName, String eventTime, String key1, String key2,
+                                                           String key3, String key4, String key5, String databaseName) {
         List<Object> allGlobalTRX = new ArrayList<>();
         switch (databaseName.toLowerCase()) {
             case "dev11":
-                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForDev11(serviceName, eventTime);
+                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForDev11(serviceName, eventTime ,key1 , key2 ,
+                        key3 ,  key4 ,  key5);
                 break;
             case "stage11":
-                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForStage11(serviceName, eventTime);
+                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForStage11(serviceName, eventTime ,key1 , key2 ,
+                        key3 ,  key4 ,  key5);
                 break;
             case "prod11":
-                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForProd11(serviceName, eventTime);
+                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForProd11(serviceName, eventTime ,key1 , key2 ,
+                        key3 ,  key4 ,  key5);
                 break;
             default:
                 throw new IllegalArgumentException("Invalid database name: " + databaseName);
