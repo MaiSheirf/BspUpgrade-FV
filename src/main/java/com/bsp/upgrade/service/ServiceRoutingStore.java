@@ -1,7 +1,6 @@
 package com.bsp.upgrade.service;
 
 import com.bsp.upgrade.config.SwitchDataSource;
-import com.bsp.upgrade.entity.FullJourney;
 import com.bsp.upgrade.repository.EntityRepo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,17 +32,17 @@ public class ServiceRoutingStore {
     }
 
     @SwitchDataSource("DEV11")
-    public List<FullJourney> fullJourneyByGlobalTransactionIDForDev11(String globalTransactionId) {
+    public List<Object> fullJourneyByGlobalTransactionIDForDev11(String globalTransactionId) {
         return repo.fullJourneyByGlobalTransactionID(globalTransactionId);
     }
 
     @SwitchDataSource("STAGE11")
-    public  List<FullJourney> fullJourneyByGlobalTransactionIDForStage11(String globalTransactionId) {
+    public  List<Object> fullJourneyByGlobalTransactionIDForStage11(String globalTransactionId) {
         return repo.fullJourneyByGlobalTransactionID(globalTransactionId);
     }
 
     @SwitchDataSource("PROD11")
-    public  List<FullJourney> fullJourneyByGlobalTransactionIDForProd11(String globalTransactionId) {
+    public  List<Object> fullJourneyByGlobalTransactionIDForProd11(String globalTransactionId) {
         return repo.fullJourneyByGlobalTransactionID(globalTransactionId);
     }
 

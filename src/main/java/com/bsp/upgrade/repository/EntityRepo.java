@@ -1,8 +1,6 @@
 package com.bsp.upgrade.repository;
 
 import com.bsp.upgrade.entity.EsbServiceInf;
-import com.bsp.upgrade.entity.FullJourney;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -17,17 +15,16 @@ public interface EntityRepo extends JpaRepository<EsbServiceInf, String> {
             nativeQuery = true)
     List<Object> getServiceNames(String serviceName);
 
-    @Query(value = "select std.payload payloadData, err.PAYLOAD payloadDataErr, serEve.PAYLOAD_ID payloadId," +
-            " serEve.EVENT_NAME ServiceName , serEve.EVENT_TIME EventTime, serEve.EVENT_KEY1 EventKey1," +
-            " serEve.EVENT_KEY2 EventKey2, serEve.EVENT_KEY3 EventKey3, serEve.EVENT_KEY4 EventKey4, " +
-            "serEve.EVENT_KEY5 EventKey5, serEve.EVENT_STATUS eventStatus  " +
-            "from  ESB_SERVICE_EVT serEve inner join ESB_SERVICE_TRX trans on " +
-            "trans.TRANSACTION_ID = serEve.TRANSACTION_ID left outer JOIN " +
-            "ESB_PAYLOAD_STD std ON serEve.PAYLOAD_ID = std.PAYLOAD_ID left outer join " +
-            "ESB_PAYLOAD_ERR err on serEve.PAYLOAD_ID = err.PAYLOAD_ID where " +
-            "trans.GLOBAL_TRANSACTION_ID = ?1 order by serEve.EVENT_TIME asc ",
-            nativeQuery = true)
-    List<FullJourney> fullJourneyByGlobalTransactionID(String globalTransactionId);
+    @Query(value = "select std.payload , err.payload , serEve.payloadId ," +
+            " serEve.serviceId  , serEve.eventTIme , serEve.eventKey1 ," +
+            " serEve.eventKey2 , serEve.eventKey3 , serEve.eventKey4 , " +
+            "serEve.eventKey5 , serEve.eventStatus   " +
+            "from  EsbServiceEvt serEve inner join EsbServiceTrx trans on " +
+            "trans.trancactionId = serEve.transactionId left outer JOIN " +
+            "EsbPayloadStd std ON serEve.payloadId = std.payloadId left outer join " +
+            "EsbPaylodErr err on serEve.payloadId = err.payloadId where " +
+            "trans.globalTransactionId = ?1 order by serEve.eventTIme asc ")
+    List<Object> fullJourneyByGlobalTransactionID(String globalTransactionId);
 
     @Query(value = "select distinct tx.GLOBAL_TRANSACTION_ID RequestId , tx.START_TIME ReguestTime from " +
             "ESB_SERVICE_TRX tx ,(select distinct serTrans.GLOBAL_TRANSACTION_ID globalTransaction from " +

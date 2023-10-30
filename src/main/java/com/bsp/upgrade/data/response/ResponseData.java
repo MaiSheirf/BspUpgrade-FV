@@ -1,4 +1,4 @@
-package com.bsp.upgrade.entity.data;
+package com.bsp.upgrade.data.response;
 
 import lombok.Data;
 

@@ -1,6 +1,5 @@
 package com.bsp.upgrade.service;
 
-import com.bsp.upgrade.entity.FullJourney;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -39,8 +38,8 @@ public class ServiceRouting implements ServiceList {
     }
 
     @Override
-    public  Object fullJourneyByGlobalTransaction(String globalTransactionId, String databaseName) {
-        List<FullJourney> fullGourneyList = null;
+    public  List<Object> fullJourneyByGlobalTransaction(String globalTransactionId, String databaseName) {
+        List<Object> fullGourneyList = new ArrayList<>();
         switch (databaseName.toLowerCase()) {
             case "dev11":
                 fullGourneyList = ServiceRoutingStore.fullJourneyByGlobalTransactionIDForDev11(globalTransactionId);

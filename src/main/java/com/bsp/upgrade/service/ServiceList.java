@@ -7,7 +7,7 @@ public interface ServiceList {
 
     List<Object> getServiceNames(String regex, String databaseName);
 
-   Object fullJourneyByGlobalTransaction(String globalTransactionId , String databaseName);
+   List<Object> fullJourneyByGlobalTransaction(String globalTransactionId , String databaseName);
 
     List<Object> allGlobalTrxIdByDateAndServiceName(String serviceName , String eventTime , String databaseName);
 

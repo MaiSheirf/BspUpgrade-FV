@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.bsp</groupId>
-	<artifactId>BSP</artifactId>
+	<artifactId>BspUpgrade</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>BSP-Broker-Portal</name>
 	<description>BSP Broker Portal Project</description>

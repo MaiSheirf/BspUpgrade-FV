@@ -1,8 +1,8 @@
-package com.bsp.upgrade.entity.data.helpers;
+package com.bsp.upgrade.data.helpers;
 
-import com.bsp.upgrade.entity.data.Response;
-import com.bsp.upgrade.entity.data.ResponseData;
-import com.bsp.upgrade.entity.data.ResponseStatus;
+import com.bsp.upgrade.data.response.Response;
+import com.bsp.upgrade.data.response.ResponseData;
+import com.bsp.upgrade.data.response.ResponseStatus;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;

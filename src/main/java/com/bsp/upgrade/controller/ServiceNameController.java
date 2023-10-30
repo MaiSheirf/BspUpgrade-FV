@@ -1,7 +1,7 @@
 package com.bsp.upgrade.controller;
 
-import com.bsp.upgrade.entity.data.Response;
-import com.bsp.upgrade.entity.data.helpers.ResponseHandler;
+import com.bsp.upgrade.data.response.Response;
+import com.bsp.upgrade.data.helpers.ResponseHandler;
 import com.bsp.upgrade.service.ServiceRouting;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
