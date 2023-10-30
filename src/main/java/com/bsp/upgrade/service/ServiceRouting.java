@@ -31,6 +31,15 @@ public class ServiceRouting implements ServiceList {
             case "prod11":
                 serviceNames = ServiceRoutingStore.getServiceNamesForProd11(regex);
                 break;
+            case "dev10":
+                serviceNames = ServiceRoutingStore.getServiceNamesForDev10(regex);
+                break;
+            case "stage10":
+                serviceNames = ServiceRoutingStore.getServiceNamesForStage10(regex);
+                break;
+            case "prod10":
+                serviceNames = ServiceRoutingStore.getServiceNamesForProd10(regex);
+                break;
             default:
                 throw new IllegalArgumentException("Invalid database name: " + dataBaseName);
         }
@@ -49,6 +58,15 @@ public class ServiceRouting implements ServiceList {
                 break;
             case "prod11":
                 fullGourneyList = ServiceRoutingStore.fullJourneyByGlobalTransactionIDForProd11(globalTransactionId);
+                break;
+            case "dev10":
+                fullGourneyList = ServiceRoutingStore.fullJourneyByGlobalTransactionIDForDev10(globalTransactionId);
+                break;
+            case "stage10":
+                fullGourneyList = ServiceRoutingStore.fullJourneyByGlobalTransactionIDForStage10(globalTransactionId);
+                break;
+            case "prod10":
+                fullGourneyList = ServiceRoutingStore.fullJourneyByGlobalTransactionIDForProd10(globalTransactionId);
                 break;
             default:
                 throw new IllegalArgumentException("Invalid database name: " + databaseName);
@@ -73,6 +91,18 @@ public class ServiceRouting implements ServiceList {
                 allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForProd11(serviceName, eventTime ,key1 , key2 ,
                         key3 ,  key4 ,  key5);
                 break;
+            case "dev10":
+                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForDev10(serviceName, eventTime ,key1 , key2 ,
+                        key3 ,  key4 ,  key5);
+                break;
+            case "stage10":
+                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForStage10(serviceName, eventTime ,key1 , key2 ,
+                        key3 ,  key4 ,  key5);
+                break;
+            case "prod10":
+                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForProd10(serviceName, eventTime ,key1 , key2 ,
+                        key3 ,  key4 ,  key5);
+                break;
             default:
                 throw new IllegalArgumentException("Invalid database name: " + databaseName);
         }
@@ -91,6 +121,15 @@ public class ServiceRouting implements ServiceList {
                 break;
             case "prod11":
                 allKeyPaths = ServiceRoutingStore.allKeyPathsForProd11(serviceName);
+                break;
+            case "dev10":
+                allKeyPaths = ServiceRoutingStore.allKeyPathsForDev10(serviceName);
+                break;
+            case "stage10":
+                allKeyPaths = ServiceRoutingStore.allKeyPathsForStage10(serviceName);
+                break;
+            case "prod10":
+                allKeyPaths = ServiceRoutingStore.allKeyPathsForProd10(serviceName);
                 break;
             default:
                 throw new IllegalArgumentException("Invalid database name: " + datbaseName);

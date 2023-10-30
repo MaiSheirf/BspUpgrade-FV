@@ -11,8 +11,9 @@ import java.util.List;
 @Repository
 public interface EntityRepo extends JpaRepository<EsbServiceInf, String> {
 
-    @Query(value = "select distinct service_name serviceName from ESB_SERVICE_INF where UPPER(service_name) like  UPPER(?1) and isReadable=1 order by 1 asc ",
-            nativeQuery = true)
+    @Query(value = "select distinct  serviceName from EsbServiceInf where " +
+            "UPPER(serviceName) like  UPPER(?1) and isReadable=1 order by 1 asc "
+            )
     List<Object> getServiceNames(String serviceName);
 
     @Query(value = "select std.payload , err.payload , serEve.payloadId ," +
@@ -41,7 +42,7 @@ public interface EntityRepo extends JpaRepository<EsbServiceInf, String> {
             "        WHERE\n" +
             "            1 = 1\n" +
             "            AND upper(serinfo.service_name) = upper(?1)\n" +
-            "            AND sereve.event_time LIKE ?2 || '%'\n" +
+            "            AND sereve.event_time LIKE ?2 \n" +
             "            AND ( sereve.event_key1 = ?3\n" +
             "                  OR ?3 IS NULL )\n" +
             "            AND ( sereve.event_key2 = ?4\n" +
@@ -60,9 +61,9 @@ public interface EntityRepo extends JpaRepository<EsbServiceInf, String> {
     List<Object> allGlobalTrxIdByDateAndServiceName(String serviceName, String eventTime ,String key1 ,String key2 ,
                                                     String key3 , String key4 , String key5);
 
-    @Query(value = "SELECT inf.service_name,inf.service_operation,inf.service_key1_path,inf.service_key2_path,inf.service_key3_path,inf.service_key4_path,\n" +
-            "inf.service_key5_path FROM esb_service_inf inf\n" +
-            "WHERE  upper(inf.service_name) = UPPER(?1)", nativeQuery = true)
+    @Query(value = "SELECT inf.serviceName,inf.serviceOperation,inf.key1Path,inf.key2Path,inf.key3Path,inf.key4Path,\n" +
+            "inf.key5Path FROM EsbServiceInf inf\n" +
+            "WHERE  upper(inf.serviceName) = UPPER(?1)")
     List<Object> allKeyPaths(String serviceName);
 
 
