@@ -15,10 +15,11 @@ public class EsbPayloadStd {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PAYLOAD_ID")
-    @Lob
+
     private String payloadId;
 
     @Column(name = "PAYLOAD")
+    @Lob
     private String payload;
 
     public EsbPayloadStd(String payload) {
