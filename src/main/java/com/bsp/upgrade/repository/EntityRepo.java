@@ -19,7 +19,7 @@ public interface EntityRepo extends JpaRepository<EsbServiceInf, String> {
     @Query(value = "select std.payload , err.payload , serEve.payloadId ," +
             " serEve.serviceId  , serEve.eventTIme , serEve.eventKey1 ," +
             " serEve.eventKey2 , serEve.eventKey3 , serEve.eventKey4 , " +
-            "serEve.eventKey5 , serEve.eventStatus   " +
+            "serEve.eventKey5 , serEve.eventStatus ,serEve.eventName   " +
             "from  EsbServiceEvt serEve inner join EsbServiceTrx trans on " +
             "trans.trancactionId = serEve.transactionId left outer JOIN " +
             "EsbPayloadStd std ON serEve.payloadId = std.payloadId left outer join " +
