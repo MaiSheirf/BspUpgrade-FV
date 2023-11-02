@@ -21,24 +21,36 @@ public class ServiceRouting implements ServiceList {
     @Override
     public List<Object> getServiceNames(String regex, String dataBaseName) {
         List<Object> serviceNames = new ArrayList<>();
-        switch (dataBaseName.toLowerCase()) {
-            case "dev11":
+        switch (dataBaseName.toUpperCase()) {
+            case "DEV11":
                 serviceNames = ServiceRoutingStore.getServiceNamesForDev11(regex);
                 break;
-            case "stage11":
+            case "STAGE11":
                 serviceNames = ServiceRoutingStore.getServiceNamesForStage11(regex);
                 break;
-            case "prod11":
+            case "PROD11":
                 serviceNames = ServiceRoutingStore.getServiceNamesForProd11(regex);
                 break;
-            case "dev10":
+            case "DEV10":
                 serviceNames = ServiceRoutingStore.getServiceNamesForDev10(regex);
                 break;
-            case "stage10":
+            case "STAGE10":
                 serviceNames = ServiceRoutingStore.getServiceNamesForStage10(regex);
                 break;
-            case "prod10":
+            case "TEST10":
+                serviceNames = ServiceRoutingStore.getServiceNamesForTest10(regex);
+                break;
+            case "PROD10":
                 serviceNames = ServiceRoutingStore.getServiceNamesForProd10(regex);
+                break;
+            case "DEV12":
+                serviceNames = ServiceRoutingStore.getServiceNamesForDev12(regex);
+                break;
+            case "STAGE12":
+                serviceNames = ServiceRoutingStore.getServiceNamesForStage12(regex);
+                break;
+            case "PROD12":
+                serviceNames = ServiceRoutingStore.getServiceNamesForProd12(regex);
                 break;
             default:
                 throw new IllegalArgumentException("Invalid database name: " + dataBaseName);
@@ -47,26 +59,38 @@ public class ServiceRouting implements ServiceList {
     }
 
     @Override
-    public  List<Object> fullJourneyByGlobalTransaction(String globalTransactionId, String databaseName) {
+    public List<Object> fullJourneyByGlobalTransaction(String globalTransactionId, String databaseName) {
         List<Object> fullGourneyList = new ArrayList<>();
-        switch (databaseName.toLowerCase()) {
-            case "dev11":
+        switch (databaseName.toUpperCase()) {
+            case "DEV11":
                 fullGourneyList = ServiceRoutingStore.fullJourneyByGlobalTransactionIDForDev11(globalTransactionId);
                 break;
-            case "stage11":
+            case "STAGE11":
                 fullGourneyList = ServiceRoutingStore.fullJourneyByGlobalTransactionIDForStage11(globalTransactionId);
                 break;
-            case "prod11":
+            case "PROD11":
                 fullGourneyList = ServiceRoutingStore.fullJourneyByGlobalTransactionIDForProd11(globalTransactionId);
                 break;
-            case "dev10":
+            case "DEV10":
                 fullGourneyList = ServiceRoutingStore.fullJourneyByGlobalTransactionIDForDev10(globalTransactionId);
                 break;
-            case "stage10":
+            case "STAGE10":
                 fullGourneyList = ServiceRoutingStore.fullJourneyByGlobalTransactionIDForStage10(globalTransactionId);
                 break;
-            case "prod10":
+            case "TEST10":
+                fullGourneyList = ServiceRoutingStore.fullJourneyByGlobalTransactionIDForTest10(globalTransactionId);
+                break;
+            case "PROD10":
                 fullGourneyList = ServiceRoutingStore.fullJourneyByGlobalTransactionIDForProd10(globalTransactionId);
+                break;
+            case "DEV12":
+                fullGourneyList = ServiceRoutingStore.fullJourneyByGlobalTransactionIDForDev12(globalTransactionId);
+                break;
+            case "STAGE12":
+                fullGourneyList = ServiceRoutingStore.fullJourneyByGlobalTransactionIDForStage12(globalTransactionId);
+                break;
+            case "PROD12":
+                fullGourneyList = ServiceRoutingStore.fullJourneyByGlobalTransactionIDForProd12(globalTransactionId);
                 break;
             default:
                 throw new IllegalArgumentException("Invalid database name: " + databaseName);
@@ -78,30 +102,46 @@ public class ServiceRouting implements ServiceList {
     public List<Object> allGlobalTrxIdByDateAndServiceName(String serviceName, String eventTime, String key1, String key2,
                                                            String key3, String key4, String key5, String databaseName) {
         List<Object> allGlobalTRX = new ArrayList<>();
-        switch (databaseName.toLowerCase()) {
-            case "dev11":
-                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForDev11(serviceName, eventTime ,key1 , key2 ,
-                        key3 ,  key4 ,  key5);
+        switch (databaseName.toUpperCase()) {
+            case "DEV11":
+                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForDev11(serviceName, eventTime, key1, key2,
+                        key3, key4, key5);
                 break;
-            case "stage11":
-                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForStage11(serviceName, eventTime ,key1 , key2 ,
-                        key3 ,  key4 ,  key5);
+            case "STAGE11":
+                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForStage11(serviceName, eventTime, key1, key2,
+                        key3, key4, key5);
                 break;
-            case "prod11":
-                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForProd11(serviceName, eventTime ,key1 , key2 ,
-                        key3 ,  key4 ,  key5);
+            case "PROD11":
+                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForProd11(serviceName, eventTime, key1, key2,
+                        key3, key4, key5);
                 break;
-            case "dev10":
-                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForDev10(serviceName, eventTime ,key1 , key2 ,
-                        key3 ,  key4 ,  key5);
+            case "DEV10":
+                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForDev10(serviceName, eventTime, key1, key2,
+                        key3, key4, key5);
                 break;
-            case "stage10":
-                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForStage10(serviceName, eventTime ,key1 , key2 ,
-                        key3 ,  key4 ,  key5);
+            case "STAGE10":
+                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForStage10(serviceName, eventTime, key1, key2,
+                        key3, key4, key5);
                 break;
-            case "prod10":
-                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForProd10(serviceName, eventTime ,key1 , key2 ,
-                        key3 ,  key4 ,  key5);
+            case "TEST10":
+                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForTest10(serviceName, eventTime, key1, key2,
+                        key3, key4, key5);
+                break;
+            case "PROD10":
+                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForProd10(serviceName, eventTime, key1, key2,
+                        key3, key4, key5);
+                break;
+            case "DEV12":
+                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForDev12(serviceName, eventTime, key1, key2,
+                        key3, key4, key5);
+                break;
+            case "STAGE12":
+                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForStage12(serviceName, eventTime, key1, key2,
+                        key3, key4, key5);
+                break;
+            case "PROD12":
+                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForProd12(serviceName, eventTime, key1, key2,
+                        key3, key4, key5);
                 break;
             default:
                 throw new IllegalArgumentException("Invalid database name: " + databaseName);
@@ -112,24 +152,36 @@ public class ServiceRouting implements ServiceList {
     @Override
     public List<Object> allKeyPaths(String serviceName, String datbaseName) {
         List<Object> allKeyPaths = new ArrayList<>();
-        switch (datbaseName.toLowerCase()) {
-            case "dev11":
+        switch (datbaseName.toUpperCase()) {
+            case "DEV11":
                 allKeyPaths = ServiceRoutingStore.allKeyPathsForDev11(serviceName);
                 break;
-            case "stage11":
+            case "STAGE11":
                 allKeyPaths = ServiceRoutingStore.allKeyPathsForStage11(serviceName);
                 break;
-            case "prod11":
+            case "PROD11":
                 allKeyPaths = ServiceRoutingStore.allKeyPathsForProd11(serviceName);
                 break;
-            case "dev10":
+            case "DEV10":
                 allKeyPaths = ServiceRoutingStore.allKeyPathsForDev10(serviceName);
                 break;
-            case "stage10":
+            case "STAGE10":
                 allKeyPaths = ServiceRoutingStore.allKeyPathsForStage10(serviceName);
                 break;
-            case "prod10":
+            case "TEST10":
+                allKeyPaths = ServiceRoutingStore.allKeyPathsForTest10(serviceName);
+                break;
+            case "PROD10":
                 allKeyPaths = ServiceRoutingStore.allKeyPathsForProd10(serviceName);
+                break;
+            case "DEV12":
+                allKeyPaths = ServiceRoutingStore.allKeyPathsForDev12(serviceName);
+                break;
+            case "STAGE12":
+                allKeyPaths = ServiceRoutingStore.allKeyPathsForStage12(serviceName);
+                break;
+            case "PROD12":
+                allKeyPaths = ServiceRoutingStore.allKeyPathsForProd12(serviceName);
                 break;
             default:
                 throw new IllegalArgumentException("Invalid database name: " + datbaseName);
@@ -137,6 +189,15 @@ public class ServiceRouting implements ServiceList {
         return allKeyPaths;
     }
 
+
+    public List<Object> getAllMobileServices(String regex, String databaseName) {
+        switch (databaseName.toUpperCase()) {
+            case "MOBILE":
+                return ServiceRoutingStore.getAllMobileServices(regex);
+            default:
+                throw new IllegalArgumentException("Invalid database name: " + databaseName);
+        }
+    }
 
 }
 
