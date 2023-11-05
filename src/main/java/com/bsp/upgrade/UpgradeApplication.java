@@ -15,12 +15,6 @@ public class UpgradeApplication extends SpringBootServletInitializer {
 		SpringApplication.run(UpgradeApplication.class, args);
 	}
 
-	@Bean
-	public ObjectMapper getObjectMapper() {
-
-		return new ObjectMapper();
-
-	}
 
 
 }
