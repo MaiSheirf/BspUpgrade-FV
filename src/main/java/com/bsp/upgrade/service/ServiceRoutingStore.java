@@ -14,8 +14,6 @@ public class ServiceRoutingStore {
 
     @Autowired
     private EntityRepo repo;
-    @Autowired
-    private MobileRepo mobileRepo;
 
     @SwitchDataSource("DEV11")
     public List<Object> getServiceNamesForDev11(String serviceName) {
