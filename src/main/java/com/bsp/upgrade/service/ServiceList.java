@@ -13,6 +13,5 @@ public interface ServiceList {
                                                     String key3 , String key4 , String key5 ,String databaseName);
     List<Object> allKeyPaths(String serviceName ,String databaseName);
 
-    List<Object> getAllMobileServices(String regex, String databaseName);
 
 }

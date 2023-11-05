@@ -2,7 +2,6 @@ package com.bsp.upgrade.service;
 
 import com.bsp.upgrade.config.SwitchDataSource;
 import com.bsp.upgrade.repository.EntityRepo;
-import com.bsp.upgrade.repository.MobileRepo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -241,9 +240,5 @@ public class ServiceRoutingStore {
     }
 
 
-    @SwitchDataSource("MOBILE")
-    public List<Object> getAllMobileServices(String serviceName) {
-        return mobileRepo.getAllMobileServices(serviceName);
-    }
 
 }

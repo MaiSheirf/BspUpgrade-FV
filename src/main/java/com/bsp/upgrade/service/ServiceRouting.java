@@ -190,14 +190,6 @@ public class ServiceRouting implements ServiceList {
     }
 
 
-    public List<Object> getAllMobileServices(String regex, String databaseName) {
-        switch (databaseName.toUpperCase()) {
-            case "MOBILE":
-                return ServiceRoutingStore.getAllMobileServices(regex);
-            default:
-                throw new IllegalArgumentException("Invalid database name: " + databaseName);
-        }
-    }
 
 }
 
