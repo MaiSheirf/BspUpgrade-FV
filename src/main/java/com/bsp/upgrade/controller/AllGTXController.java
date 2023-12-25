@@ -23,7 +23,7 @@ public class AllGTXController {
     public Response allGlobalTrxByDateAndServiceName(@PathVariable("databaseName") String databaseName, @PathVariable("serviceName") String serviceName, @PathVariable("eventTime") String eventTime , @PathVariable("key1") String key1 , @PathVariable("key2") String key2 ,
                                                      @PathVariable("key3") String key3 ,@PathVariable("key4") String key4 ,
                                                      @PathVariable("key5") String key5) {
-        eventTime = eventTime + "%" ;
+       // eventTime = eventTime + "%" ;
         if (key1.equals("NA")){
             key1 = null;
         }

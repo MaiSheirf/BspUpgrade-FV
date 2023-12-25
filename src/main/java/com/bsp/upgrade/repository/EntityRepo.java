@@ -42,7 +42,7 @@ public interface EntityRepo extends JpaRepository<EsbServiceInf, String> {
             "        WHERE\n" +
             "            1 = 1\n" +
             "            AND upper(serinfo.service_name) = upper(?1)\n" +
-            "            AND sereve.event_time LIKE ?2 \n" +
+            "            AND sereve.event_time LIKE CONCAT(?2, '%')\n" +
             "            AND ( sereve.event_key1 = ?3\n" +
             "                  OR ?3 IS NULL )\n" +
             "            AND ( sereve.event_key2 = ?4\n" +
@@ -57,7 +57,7 @@ public interface EntityRepo extends JpaRepository<EsbServiceInf, String> {
             "WHERE\n" +
             "    gtx.globaltransaction = tx.transaction_id\n" +
             "ORDER BY\n" +
-            "    reguesttime DESC" , nativeQuery = true)
+            "    reguesttime DESC", nativeQuery = true)
     List<Object> allGlobalTrxIdByDateAndServiceName(String serviceName, String eventTime ,String key1 ,String key2 ,
                                                     String key3 , String key4 , String key5);
 
