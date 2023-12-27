@@ -4,6 +4,8 @@ import com.bsp.upgrade.data.response.Response;
 import com.bsp.upgrade.data.helpers.ResponseHandler;
 import com.bsp.upgrade.service.ServiceRouting;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +18,7 @@ import java.util.List;
 @Slf4j
 public class AllGTXController {
 
+    private final Logger logger = LoggerFactory.getLogger(getClass());
     @Autowired
     private ServiceRouting serviceRouter;
 
@@ -23,6 +26,10 @@ public class AllGTXController {
     public Response allGlobalTrxByDateAndServiceName(@PathVariable("databaseName") String databaseName, @PathVariable("serviceName") String serviceName, @PathVariable("eventTime") String eventTime , @PathVariable("key1") String key1 , @PathVariable("key2") String key2 ,
                                                      @PathVariable("key3") String key3 ,@PathVariable("key4") String key4 ,
                                                      @PathVariable("key5") String key5) {
+
+        logger.trace("Controller will serve func [{}] through DB [{}] with variables sent [{}]",
+                "allGlobalTrx",serviceName, eventTime ,key1 , key2 ,
+                key3 ,  key4 ,  key5 , databaseName);
        // eventTime = eventTime + "%" ;
         if (key1.equals("NA")){
             key1 = null;
