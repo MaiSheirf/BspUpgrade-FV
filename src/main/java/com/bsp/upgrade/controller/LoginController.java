@@ -19,8 +19,9 @@ public class LoginController {
     private final Logger logger = LoggerFactory.getLogger(getClass());
     @GetMapping("/{username}/{password}")
     public Response doLogin(@PathVariable("username") String username, @PathVariable("password") String password) {
-        logger.trace("Controller will serve func [{}] through DB [{}] with variables sent [{}]",
+        logger.trace("Controller will serve func [{}]  with variables sent [{}] , [{}]",
                 "doLogin",username,password);
+
         Response response = new Response();
         ResponseData responseData = new ResponseData();
         ResponseStatus status = new ResponseStatus("100", "Success");

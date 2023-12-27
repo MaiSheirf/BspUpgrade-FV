@@ -27,10 +27,11 @@ public class AllGTXController {
                                                      @PathVariable("key3") String key3 ,@PathVariable("key4") String key4 ,
                                                      @PathVariable("key5") String key5) {
 
-        logger.trace("Controller will serve func [{}] through DB [{}] with variables sent [{}]",
-                "allGlobalTrx",serviceName, eventTime ,key1 , key2 ,
-                key3 ,  key4 ,  key5 , databaseName);
-       // eventTime = eventTime + "%" ;
+        logger.trace("Controller will serve func [{}] through DB [{}] with variables sent [{}] , [{}] , [{}] , [{}] , [{}] , [{}] , [{}]",
+                "allGlobalTrx",databaseName,serviceName, eventTime ,key1 , key2 ,
+                key3 ,  key4 ,  key5 );
+
+        // eventTime = eventTime + "%" ;
         if (key1.equals("NA")){
             key1 = null;
         }

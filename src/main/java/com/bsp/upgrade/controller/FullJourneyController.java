@@ -30,7 +30,8 @@ public class FullJourneyController {
     public Response fullJourneyByGlobalTransactionId(@PathVariable("databaseName") String databaseName,
                                                      @PathVariable("gtx") String globalTransactionId) {
         logger.trace("Controller will serve func [{}] through DB [{}] with variables sent [{}]",
-                "fullJourney",globalTransactionId, databaseName);
+                "fullJourney",databaseName,globalTransactionId);
+
         List<Object> fullJourneyList = serviceRouter.fullJourneyByGlobalTransaction(globalTransactionId, databaseName);
         return ResponseHandler.handleResponse(fullJourneyList, "FullJourney");
     }
