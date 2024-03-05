@@ -1,0 +1,9 @@
+QUERY: 2024-03-04 18:39:29,832 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - select distinct e1_0.SERVICE_NAME from ESB_SERVICE_INF e1_0 where upper(e1_0.SERVICE_NAME) like upper(?) and e1_0.ISREADABLE=1 order by 1 asc
+QUERY:
+                2024-03-04 18:46:28,246 [http-nio-8082-exec-1] DEBUG org.hibernate.SQL - select distinct e1_0.SERVICE_NAME from ESB_SERVICE_INF e1_0 where upper(e1_0.SERVICE_NAME) like upper(?) and e1_0.ISREADABLE=1 order by 1 asc
+QUERY:
+                2024-03-04 18:46:56,554 [http-nio-8082-exec-3] DEBUG org.hibernate.SQL - select distinct e1_0.SERVICE_NAME from ESB_SERVICE_INF e1_0 where upper(e1_0.SERVICE_NAME) like upper(?) and e1_0.ISREADABLE=1 order by 1 asc
+QUERY:
+                2024-03-04 18:46:58,466 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - select distinct e1_0.SERVICE_NAME from ESB_SERVICE_INF e1_0 where upper(e1_0.SERVICE_NAME) like upper(?) and e1_0.ISREADABLE=1 order by 1 asc
+QUERY:
+                2024-03-05 08:34:40,399 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - select distinct e1_0.SERVICE_NAME from ESB_SERVICE_INF e1_0 where upper(e1_0.SERVICE_NAME) like upper(?) and e1_0.ISREADABLE=1 order by 1 asc
