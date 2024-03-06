@@ -49,7 +49,10 @@ public class ServiceRoutingStore {
     public List<Object> getServiceNamesForProd10(String serviceName) {
         return repo.getServiceNames(serviceName);
     }
-
+    @SwitchDataSource("OLDPROD10")
+    public List<Object> getServiceNamesForOldProd10(String serviceName) {
+        return repo.getServiceNames(serviceName);
+    }
     @SwitchDataSource("DEV12")
     public List<Object> getServiceNamesForDev12(String serviceName) {
         return repo.getServiceNames(serviceName);
@@ -98,6 +101,10 @@ public class ServiceRoutingStore {
 
     @SwitchDataSource("PROD10")
     public List<Object> fullJourneyByGlobalTransactionIDForProd10(String globalTransactionId) {
+        return repo.fullJourneyByGlobalTransactionID(globalTransactionId);
+    }
+    @SwitchDataSource("OLDPROD10")
+    public List<Object> fullJourneyByGlobalTransactionIDForOldProd10(String globalTransactionId) {
         return repo.fullJourneyByGlobalTransactionID(globalTransactionId);
     }
 
@@ -165,6 +172,12 @@ public class ServiceRoutingStore {
         return repo.allGlobalTrxIdByDateAndServiceName(serviceName, eventTime, key1, key2,
                 key3, key4, key5);
     }
+    @SwitchDataSource("OLDPROD10")
+    public List<Object> allGlobalTrxIdByDateAndServiceNameForOldProd10(String serviceName, String eventTime, String key1, String key2,
+                                                                       String key3, String key4, String key5) {
+        return repo.allGlobalTrxIdByDateAndServiceName(serviceName, eventTime, key1, key2,
+                key3, key4, key5);
+    }
 
     @SwitchDataSource("DEV12")
     public List<Object> allGlobalTrxIdByDateAndServiceNameForDev12(String serviceName, String eventTime, String key1, String key2,
@@ -219,6 +232,11 @@ public class ServiceRoutingStore {
 
     @SwitchDataSource("PROD10")
     public List<Object> allKeyPathsForProd10(String serviceName) {
+        return repo.allKeyPaths(serviceName);
+    }
+
+    @SwitchDataSource("OLDPROD10")
+    public List<Object> allKeyPathsForOldProd10(String serviceName) {
         return repo.allKeyPaths(serviceName);
     }
 

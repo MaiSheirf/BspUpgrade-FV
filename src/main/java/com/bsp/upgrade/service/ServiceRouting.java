@@ -43,6 +43,9 @@ public class ServiceRouting implements ServiceList {
             case "PROD10":
                 serviceNames = ServiceRoutingStore.getServiceNamesForProd10(regex);
                 break;
+            case "OLDPROD10":
+                serviceNames = ServiceRoutingStore.getServiceNamesForOldProd10(regex);
+                break;
             case "DEV12":
                 serviceNames = ServiceRoutingStore.getServiceNamesForDev12(regex);
                 break;
@@ -82,6 +85,9 @@ public class ServiceRouting implements ServiceList {
                 break;
             case "PROD10":
                 fullGourneyList = ServiceRoutingStore.fullJourneyByGlobalTransactionIDForProd10(globalTransactionId);
+                break;
+            case "OLDPROD10":
+                fullGourneyList = ServiceRoutingStore.fullJourneyByGlobalTransactionIDForOldProd10(globalTransactionId);
                 break;
             case "DEV12":
                 fullGourneyList = ServiceRoutingStore.fullJourneyByGlobalTransactionIDForDev12(globalTransactionId);
@@ -131,6 +137,10 @@ public class ServiceRouting implements ServiceList {
                 allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForProd10(serviceName, eventTime, key1, key2,
                         key3, key4, key5);
                 break;
+            case "OLDPROD10":
+                allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForOldProd10(serviceName, eventTime, key1, key2,
+                        key3, key4, key5);
+                break;
             case "DEV12":
                 allGlobalTRX = ServiceRoutingStore.allGlobalTrxIdByDateAndServiceNameForDev12(serviceName, eventTime, key1, key2,
                         key3, key4, key5);
@@ -173,6 +183,9 @@ public class ServiceRouting implements ServiceList {
                 break;
             case "PROD10":
                 allKeyPaths = ServiceRoutingStore.allKeyPathsForProd10(serviceName);
+                break;
+            case "OLDPROD10":
+                allKeyPaths = ServiceRoutingStore.allKeyPathsForOldProd10(serviceName);
                 break;
             case "DEV12":
                 allKeyPaths = ServiceRoutingStore.allKeyPathsForDev12(serviceName);
