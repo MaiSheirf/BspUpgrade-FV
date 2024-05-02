@@ -7,3 +7,1489 @@ QUERY:
                 2024-03-04 18:46:58,466 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - select distinct e1_0.SERVICE_NAME from ESB_SERVICE_INF e1_0 where upper(e1_0.SERVICE_NAME) like upper(?) and e1_0.ISREADABLE=1 order by 1 asc
 QUERY:
                 2024-03-05 08:34:40,399 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - select distinct e1_0.SERVICE_NAME from ESB_SERVICE_INF e1_0 where upper(e1_0.SERVICE_NAME) like upper(?) and e1_0.ISREADABLE=1 order by 1 asc
+QUERY:
+                2024-03-06 08:43:05,377 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - select distinct e1_0.SERVICE_NAME from ESB_SERVICE_INF e1_0 where upper(e1_0.SERVICE_NAME) like upper(?) and e1_0.ISREADABLE=1 order by 1 asc
+QUERY:
+                2024-03-06 08:43:28,243 [http-nio-8082-exec-5] DEBUG org.hibernate.SQL - select distinct e1_0.SERVICE_NAME from ESB_SERVICE_INF e1_0 where upper(e1_0.SERVICE_NAME) like upper(?) and e1_0.ISREADABLE=1 order by 1 asc
+QUERY:
+                2024-03-28 14:36:06,215 [http-nio-8082-exec-1] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 14:37:25,956 [http-nio-8082-exec-5] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 14:37:43,350 [http-nio-8082-exec-6] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 14:38:42,268 [http-nio-8082-exec-7] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 14:39:03,071 [http-nio-8082-exec-9] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 14:39:25,399 [http-nio-8082-exec-10] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 14:41:26,806 [http-nio-8082-exec-1] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 14:41:58,293 [http-nio-8082-exec-4] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 14:46:00,729 [http-nio-8082-exec-3] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 14:46:54,504 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 14:49:56,790 [http-nio-8082-exec-1] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 14:58:42,293 [http-nio-8082-exec-1] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 15:13:32,723 [http-nio-8082-exec-1] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 15:20:13,885 [http-nio-8082-exec-1] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 15:22:54,197 [http-nio-8082-exec-1] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 15:24:19,462 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 15:25:24,776 [http-nio-8082-exec-7] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 15:25:30,382 [http-nio-8082-exec-8] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 15:25:36,699 [http-nio-8082-exec-9] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 15:25:54,282 [http-nio-8082-exec-10] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 15:28:34,162 [http-nio-8082-exec-1] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 15:31:43,506 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 15:32:03,901 [http-nio-8082-exec-3] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 15:33:48,831 [http-nio-8082-exec-7] DEBUG org.hibernate.SQL - select distinct e1_0.SERVICE_NAME from ESB_SERVICE_INF e1_0 where upper(e1_0.SERVICE_NAME) like upper(?) and e1_0.ISREADABLE=1 order by 1 asc
+QUERY:
+                2024-03-28 15:34:01,206 [http-nio-8082-exec-8] DEBUG org.hibernate.SQL - select e1_0.SERVICE_NAME,e1_0.service_operation,e1_0.service_key1_path,e1_0.service_key2_path,e1_0.service_key3_path,e1_0.service_key4_path,e1_0.service_key5_path from ESB_SERVICE_INF e1_0 where upper(e1_0.SERVICE_NAME)=upper(?)
+QUERY:
+                2024-03-28 15:34:25,403 [http-nio-8082-exec-6] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 15:34:59,276 [http-nio-8082-exec-5] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 15:35:20,326 [http-nio-8082-exec-9] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 15:36:18,661 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 15:40:10,728 [http-nio-8082-exec-4] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 15:40:26,249 [http-nio-8082-exec-8] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 15:50:41,326 [http-nio-8082-exec-1] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 15:52:45,453 [http-nio-8082-exec-3] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 15:54:00,195 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 16:39:40,019 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 16:39:49,853 [http-nio-8082-exec-3] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 16:40:49,529 [http-nio-8082-exec-5] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 16:41:14,422 [http-nio-8082-exec-6] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 16:41:56,688 [http-nio-8082-exec-8] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 16:42:09,421 [http-nio-8082-exec-9] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 16:42:35,031 [http-nio-8082-exec-1] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 16:42:43,015 [http-nio-8082-exec-3] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 16:43:10,153 [http-nio-8082-exec-4] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 16:46:17,582 [http-nio-8082-exec-6] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 16:46:38,417 [http-nio-8082-exec-7] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 16:46:47,915 [http-nio-8082-exec-8] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 16:47:14,106 [http-nio-8082-exec-10] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-03-28 16:49:21,950 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - SELECT DISTINCT
+    tx.global_transaction_id   requestid,
+    tx.start_time              reguesttime
+FROM
+    esb_service_trx tx,
+    (
+        SELECT DISTINCT
+            sertrans.global_transaction_id globaltransaction
+        FROM
+            esb_service_evt   sereve
+            INNER JOIN esb_service_inf   serinfo ON sereve.service_id = serinfo.service_id
+            INNER JOIN esb_service_trx   sertrans ON sereve.transaction_id = sertrans.transaction_id
+        WHERE
+            1 = 1
+            AND upper(serinfo.service_name) = upper(?)
+            AND sereve.event_time LIKE CONCAT(?, '%')
+            AND ( sereve.event_key1 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key2 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key3 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key4 = ?
+                  OR ? IS NULL )
+            AND ( sereve.event_key5 = ?
+                  OR ? IS NULL )
+    ) gtx
+WHERE
+    gtx.globaltransaction = tx.transaction_id
+ORDER BY
+    reguesttime DESC
+QUERY:
+                2024-04-30 12:16:25,149 [http-nio-8082-exec-1] DEBUG org.hibernate.SQL - select distinct e1_0.SERVICE_NAME from ESB_SERVICE_INF e1_0 where upper(e1_0.SERVICE_NAME) like upper(?) and e1_0.ISREADABLE=1 order by 1 asc
+QUERY:
+                2024-04-30 12:18:40,191 [http-nio-8082-exec-4] DEBUG org.hibernate.SQL - select distinct e1_0.SERVICE_NAME from ESB_SERVICE_INF e1_0 where upper(e1_0.SERVICE_NAME) like upper(?) and e1_0.ISREADABLE=1 order by 1 asc
+QUERY:
+                2024-05-02 13:33:39,990 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - select distinct e1_0.SERVICE_NAME from ESB_SERVICE_INF e1_0 where upper(e1_0.SERVICE_NAME) like upper(?) and e1_0.ISREADABLE=1 order by 1 asc

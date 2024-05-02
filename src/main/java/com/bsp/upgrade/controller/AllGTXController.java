@@ -28,31 +28,61 @@ public class AllGTXController {
                                                      @PathVariable("key5") String key5) {
 
         logger.trace("Controller will serve func [{}] through DB [{}] with variables sent [{}] , [{}] , [{}] , [{}] , [{}] , [{}] , [{}]",
-                "allGlobalTrx",databaseName,serviceName, eventTime ,key1 , key2 ,
-                key3 ,  key4 ,  key5 );
+                "allGlobalTrx", databaseName, serviceName, eventTime, key1, key2,
+                key3, key4, key5);
 
         // eventTime = eventTime + "%" ;
         if (key1.equals("NA")){
             key1 = null;
         }
-        if (key2.equals("NA")){
+        if (key2.equals("NA")) {
             key2 = null;
         }
-        if (key3.equals("NA")){
+        if (key3.equals("NA")) {
             key3 = null;
         }
-        if (key4.equals("NA")){
+        if (key4.equals("NA")) {
             key4 = null;
         }
-        if (key5.equals("NA")){
+        if (key5.equals("NA")) {
             key5 = null;
         }
+
+      /*  if ("NA".equals(key1)) {
+            key1 = null;
+        }
+        if ("NA".equals(key2)) {
+            key2 = null;
+        }
+        if ("NA".equals(key3)) {
+            key3 = null;
+        }
+        if ("NA".equals(key4)) {
+            key4 = null;
+        }
+        if ("NA".equals(key5)) {
+            key5 = null;
+        }*/
+
+
+  /*      if (key1 == null && key2 == null && key3 == null && key4 == null && key5 == null) {
+            List<Object> allTransactionList = serviceRouter.allGlobalTrxIdByDateAndServiceName(
+                    serviceName, eventTime, key1, key2, key3, key4, key5, databaseName);
+
+            return ResponseHandler.handleResponse(allTransactionList, "AllTransactions");
+        } else {
+
+            List<Object> allTransactionList = serviceRouter.allGlobalTrxIdByDateAndServiceName(
+                    serviceName, eventTime, key1, key2, key3, key4, key5, databaseName);
+
+            return ResponseHandler.handleResponse(allTransactionList, "AllTransactions");
+        }*/
+
 
         List<Object> allTransactionList = serviceRouter.allGlobalTrxIdByDateAndServiceName(serviceName, eventTime ,key1 , key2 ,
                 key3 ,  key4 ,  key5 , databaseName);
 
         return ResponseHandler.handleResponse(allTransactionList, "AllTransactions");
 
-
     }
-}
+    }
