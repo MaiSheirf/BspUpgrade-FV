@@ -13,9 +13,8 @@ public interface ServiceList {
                                                     String key3 , String key4 , String key5 ,String databaseName);
     List<Object> allKeyPaths(String serviceName ,String databaseName);
 
-    List<Object> allServiceHitsPerDayForOracle (String fromDate , String toDate ,String databaseName );
+    List<Object> allServiceHitsPerDay (String fromDate , String toDate ,String databaseName );
 
-    List<Object> allServiceHitsPerDayForSql (String fromDate , String toDate , String databaseName);
 
 
 }

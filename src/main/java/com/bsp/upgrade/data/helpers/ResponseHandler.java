@@ -42,12 +42,10 @@ public class ResponseHandler {
         if (serviceName.equals("FullJourney")) {
             responseData.setFullJourneyData(data);
         }
-        if (serviceName.equals("ServiceHitsPerDayForOracle")) {
-            responseData.setServiceHitsPerDayForOracle(data);
+        if (serviceName.equals("ServiceHitsPerDay")) {
+            responseData.setServiceHitsPerDay(data);
         }
-        if (serviceName.equals("ServiceHitsPerDayForSql")) {
-            responseData.setServiceHitsPerDayForSql(data);
-        }
+
 
         return responseData;
     }

@@ -11,22 +11,17 @@ public class ResponseData {
     private List<Object>ServiceNamesData;
     private List<Object>KeyPathsData;
     private String LoginData;
-    private List<Object>ServiceHitsPerDayForOracle;
-    private List<Object>ServiceHitsPerDayForSql;
+    private List<Object>ServiceHitsPerDay;
 
 
-    public List<Object> getServiceHitsPerDayForOracle() {
-        return ServiceHitsPerDayForOracle;
+
+    public List<Object> getServiceHitsPerDay() {
+        return ServiceHitsPerDay;
     }
-    public void setServiceHitsPerDayForOracle(List<Object> serviceHitsPerDayForOracle) {
-        ServiceHitsPerDayForOracle = serviceHitsPerDayForOracle;
+    public void setServiceHitsPerDay(List<Object> serviceHitsPerDay) {
+        ServiceHitsPerDay = serviceHitsPerDay;
     }
-    public List<Object> getServiceHitsPerDayForSql() {
-        return ServiceHitsPerDayForSql;
-    }
-    public void setServiceHitsPerDayForSql(List<Object> serviceHitsPerDayForSql) {
-        ServiceHitsPerDayForSql = serviceHitsPerDayForSql;
-    }
+
     public List<Object> getAllTransactionsData() {
         return AllTransactionsData;
     }

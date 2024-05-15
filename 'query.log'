@@ -1533,3 +1533,83 @@ group by
     EVENT_NAME
 order by
     SUBSTR(EVENT_TIME, 1, 10)
+QUERY:
+                2024-05-15 12:22:16,273 [http-nio-8082-exec-6] DEBUG org.hibernate.SQL - select
+    SUBSTR(EVENT_TIME, 1, 10) as EVENT_TIME,
+    EVENT_NAME,
+    EVENT_KEY1,
+    EVENT_KEY2 as CHANNEL,
+    count(*) as THECOUNT
+from
+    ESB_SERVICE_EVT
+where
+    EVENT_NAME = 'CaptureIP_ChannelId'
+   and  to_date(SUBSTR(EVENT_TIME, 1, 10), 'yyyy-mm-dd') between to_date(?, 'yyyy-mm-dd')
+   and to_date(?, 'yyyy-mm-dd')
+group by
+    SUBSTR(EVENT_TIME, 1, 10),
+    EVENT_KEY2,
+    EVENT_KEY1,
+    EVENT_NAME
+order by
+    SUBSTR(EVENT_TIME, 1, 10)
+QUERY:
+                2024-05-15 12:50:49,604 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - select
+    SUBSTR(EVENT_TIME, 1, 10) as EVENT_TIME,
+    EVENT_NAME,
+    EVENT_KEY1,
+    EVENT_KEY2 as CHANNEL,
+    count(*) as THECOUNT
+from
+    ESB_SERVICE_EVT
+where
+    EVENT_NAME = 'CaptureIP_ChannelId'
+   and  to_date(SUBSTR(EVENT_TIME, 1, 10), 'yyyy-mm-dd') between to_date(?, 'yyyy-mm-dd')
+   and to_date(?, 'yyyy-mm-dd')
+group by
+    SUBSTR(EVENT_TIME, 1, 10),
+    EVENT_KEY2,
+    EVENT_KEY1,
+    EVENT_NAME
+order by
+    SUBSTR(EVENT_TIME, 1, 10)
+QUERY:
+                2024-05-15 12:51:46,494 [http-nio-8082-exec-3] DEBUG org.hibernate.SQL - select
+    SUBSTR(EVENT_TIME, 1, 10) as EVENT_TIME,
+    EVENT_NAME,
+    EVENT_KEY1,
+    EVENT_KEY2 as CHANNEL,
+    count(*) as THECOUNT
+from
+    ESB_SERVICE_EVT
+where
+    EVENT_NAME = 'CaptureIP_ChannelId'
+   and  to_date(SUBSTR(EVENT_TIME, 1, 10), 'yyyy-mm-dd') between to_date(?, 'yyyy-mm-dd')
+   and to_date(?, 'yyyy-mm-dd')
+group by
+    SUBSTR(EVENT_TIME, 1, 10),
+    EVENT_KEY2,
+    EVENT_KEY1,
+    EVENT_NAME
+order by
+    SUBSTR(EVENT_TIME, 1, 10)
+QUERY:
+                2024-05-15 12:51:52,930 [http-nio-8082-exec-4] DEBUG org.hibernate.SQL - SELECT
+	SUBSTRING(EVENT_TIME,1,10) as EVENT_TIME,
+	EVENT_NAME,
+	EVENT_KEY1,
+	EVENT_KEY2 AS CHANNEL,
+	COUNT(*)   AS THECOUNT 
+FROM
+	ESB_SERVICE_EVT 
+WHERE
+	EVENT_NAME = 'CaptureIP_ChannelId' AND
+	CONVERT(DATE, EVENT_TIME) BETWEEN CAST(? AS DATE) AND
+	CAST(? AS DATE) 
+GROUP BY
+	EVENT_TIME,
+	EVENT_KEY2,
+	EVENT_KEY1,
+	EVENT_NAME 
+ORDER BY
+	SUBSTRING(EVENT_TIME,1,10)

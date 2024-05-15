@@ -15,25 +15,25 @@ import java.util.List;
 
 @RestController
 @Slf4j
-@RequestMapping("/allHitsPerDaySql")
-public class AllServiceHitsPerDayForSqlController {
+@RequestMapping("/allHitsPerDay")
+public class AllServiceHitsPerDayController {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
     private final ServiceRouting serviceRouter;
 
-    public AllServiceHitsPerDayForSqlController(ServiceRouting serviceRouter) {
+    public AllServiceHitsPerDayController(ServiceRouting serviceRouter) {
         this.serviceRouter = serviceRouter;
     }
 
     @GetMapping("/{databaseName}/{fromDate}/{toDate}")
-    public Response AllServiceHitsPerDayForSql(@PathVariable("databaseName") String databaseName,
-                                               @PathVariable("fromDate") String fromDate ,
-                                               @PathVariable("toDate") String toDate
+    public Response AllServiceHitsPerDayFor(@PathVariable("databaseName") String databaseName,
+                                            @PathVariable("fromDate") String fromDate ,
+                                            @PathVariable("toDate") String toDate
     ) {
         logger.trace("Controller will serve func [{}] through DB [{}] with variables sent [{}]",
-                "AllServiceHitsPerDayForSql",databaseName,fromDate,toDate);
-        List<Object> serviceNames = serviceRouter.allServiceHitsPerDayForSql(fromDate,toDate, databaseName);
-        return ResponseHandler.handleResponse(serviceNames, "ServiceHitsPerDayForSql");
+                "AllServiceHitsPerDayFor",databaseName,fromDate,toDate);
+        List<Object> serviceNames = serviceRouter.allServiceHitsPerDay(fromDate,toDate, databaseName);
+        return ResponseHandler.handleResponse(serviceNames, "ServiceHitsPerDay");
     }
 
 }
