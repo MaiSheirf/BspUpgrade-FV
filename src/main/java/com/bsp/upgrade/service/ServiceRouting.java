@@ -201,6 +201,61 @@ public class ServiceRouting implements ServiceList {
         }
         return allKeyPaths;
     }
+    @Override
+    public List<Object> allServiceHitsPerDayForOracle(String fromDate, String toDate, String databaseName) {
+        List<Object> allServiceHitsPerDayForOracle = new ArrayList<>();
+        switch (databaseName.toUpperCase()) {
+            case "DEV11":
+                allServiceHitsPerDayForOracle = ServiceRoutingStore.allServiceHitsPerDayForOracleForDev11(fromDate , toDate);
+                break;
+            case "STAGE11":
+                allServiceHitsPerDayForOracle = ServiceRoutingStore.allServiceHitsPerDayForOracleForStage11(fromDate , toDate);
+                break;
+            case "PROD11":
+                allServiceHitsPerDayForOracle = ServiceRoutingStore.allServiceHitsPerDayForOracleForProd11(fromDate , toDate);
+                break;
+
+            case "DEV12":
+                allServiceHitsPerDayForOracle = ServiceRoutingStore.allServiceHitsPerDayForOracleForDev12(fromDate , toDate);
+                break;
+            case "STAGE12":
+                allServiceHitsPerDayForOracle = ServiceRoutingStore.allServiceHitsPerDayForOracleForStage12(fromDate , toDate);
+                break;
+            case "PROD12":
+                allServiceHitsPerDayForOracle = ServiceRoutingStore.allServiceHitsPerDayForOracleForProd12(fromDate , toDate);
+                break;
+            default:
+                throw new IllegalArgumentException("Invalid database name: " + databaseName);
+        }
+        return allServiceHitsPerDayForOracle;
+    }
+
+    @Override
+    public List<Object> allServiceHitsPerDayForSql(String fromDate, String toDate, String databaseName) {
+        List<Object> allServiceHitsPerDayForSql = new ArrayList<>();
+        switch (databaseName.toUpperCase()) {
+
+            case "DEV10":
+                allServiceHitsPerDayForSql = ServiceRoutingStore.allServiceHitsPerDayForSqlForDev10(fromDate , toDate);
+                break;
+            case "STAGE10":
+                allServiceHitsPerDayForSql = ServiceRoutingStore.allServiceHitsPerDayForSqlForStage10(fromDate , toDate);
+                break;
+            case "TEST10":
+                allServiceHitsPerDayForSql = ServiceRoutingStore.allServiceHitsPerDayForSqlForTest10(fromDate , toDate);
+                break;
+            case "PROD10":
+                allServiceHitsPerDayForSql = ServiceRoutingStore.allServiceHitsPerDayForSqlForProd10(fromDate , toDate);
+                break;
+            case "OLDPROD10":
+                allServiceHitsPerDayForSql = ServiceRoutingStore.allServiceHitsPerDayForSqlForOldProd10(fromDate , toDate);
+                break;
+
+            default:
+                throw new IllegalArgumentException("Invalid database name: " + databaseName);
+        }
+        return allServiceHitsPerDayForSql;
+    }
 
 
 

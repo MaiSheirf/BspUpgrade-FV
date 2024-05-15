@@ -255,6 +255,60 @@ public class ServiceRoutingStore {
         return repo.allKeyPaths(serviceName);
     }
 
+    @SwitchDataSource("DEV11")
+    public List<Object> allServiceHitsPerDayForOracleForDev11(String fromDate , String toDate) {
+        return repo.allServiceHitsPerDayForOracle(fromDate , toDate);
+    }
+
+    @SwitchDataSource("STAGE11")
+    public List<Object> allServiceHitsPerDayForOracleForStage11(String fromDate , String toDate) {
+        return repo.allServiceHitsPerDayForOracle(fromDate , toDate);
+    }
+
+    @SwitchDataSource("PROD11")
+    public List<Object> allServiceHitsPerDayForOracleForProd11(String fromDate , String toDate) {
+        return repo.allServiceHitsPerDayForOracle(fromDate , toDate);
+    }
+
+    @SwitchDataSource("DEV12")
+    public List<Object> allServiceHitsPerDayForOracleForDev12(String fromDate , String toDate) {
+        return repo.allServiceHitsPerDayForOracle(fromDate , toDate);
+    }
+
+    @SwitchDataSource("STAGE12")
+    public List<Object> allServiceHitsPerDayForOracleForStage12(String fromDate , String toDate) {
+        return repo.allServiceHitsPerDayForOracle(fromDate , toDate);
+    }
+
+    @SwitchDataSource("PROD12")
+    public List<Object> allServiceHitsPerDayForOracleForProd12(String fromDate , String toDate) {
+        return repo.allServiceHitsPerDayForOracle(fromDate , toDate);
+    }
+
+
+    @SwitchDataSource("DEV10")
+    public List<Object> allServiceHitsPerDayForSqlForDev10(String fromDate , String toDate) {
+        return repo.allServiceHitsPerDayForSql(fromDate , toDate);
+    }
+
+    @SwitchDataSource("STAGE10")
+    public List<Object> allServiceHitsPerDayForSqlForStage10(String fromDate , String toDate) {
+        return repo.allServiceHitsPerDayForSql(fromDate , toDate);
+    }
+
+    @SwitchDataSource("TEST10")
+    public List<Object> allServiceHitsPerDayForSqlForTest10(String fromDate , String toDate) {
+        return repo.allServiceHitsPerDayForSql(fromDate , toDate);
+    }
+
+    @SwitchDataSource("PROD10")
+    public List<Object> allServiceHitsPerDayForSqlForProd10(String fromDate , String toDate) {
+        return repo.allServiceHitsPerDayForSql(fromDate , toDate);
+    }
+    @SwitchDataSource("OLDPROD10")
+    public List<Object> allServiceHitsPerDayForSqlForOldProd10(String fromDate , String toDate) {
+        return repo.allServiceHitsPerDayForSql(fromDate , toDate);
+    }
 
 
 }

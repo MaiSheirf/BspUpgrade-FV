@@ -66,5 +66,48 @@ public interface EntityRepo extends JpaRepository<EsbServiceInf, String> {
             "WHERE  upper(inf.serviceName) = UPPER(?1)")
     List<Object> allKeyPaths(String serviceName);
 
+    @Query(value =  "select\r\n"
+            + "    SUBSTR(EVENT_TIME, 1, 10) as EVENT_TIME,\r\n"
+            + "    EVENT_NAME,\r\n"
+            + "    EVENT_KEY1,\r\n"
+            + "    EVENT_KEY2 as CHANNEL,\r\n"
+            + "    count(*) as THECOUNT\r\n"
+            + "from\r\n"
+            + "    ESB_SERVICE_EVT\r\n"
+            + "where\r\n"
+            + "    EVENT_NAME = 'CaptureIP_ChannelId'\r\n"
+            + "   and  to_date(SUBSTR(EVENT_TIME, 1, 10), 'yyyy-mm-dd') between to_date(?1, 'yyyy-mm-dd')\r\n"
+            + "   and to_date(?2, 'yyyy-mm-dd')\r\n"
+            + "group by\r\n"
+            + "    SUBSTR(EVENT_TIME, 1, 10),\r\n"
+            + "    EVENT_KEY2,\r\n"
+            + "    EVENT_KEY1,\r\n"
+            + "    EVENT_NAME\r\n"
+            + "order by\r\n"
+            + "    SUBSTR(EVENT_TIME, 1, 10)",  nativeQuery = true)
+    List<Object> allServiceHitsPerDayForOracle (String fromDate , String toDate);
+
+
+    @Query(value = "SELECT\r\n"
+            + "	SUBSTRING(EVENT_TIME,1,10) as EVENT_TIME,\r\n"
+            + "	EVENT_NAME,\r\n"
+            + "	EVENT_KEY1,\r\n"
+            + "	EVENT_KEY2 AS CHANNEL,\r\n"
+            + "	COUNT(*)   AS THECOUNT \r\n"
+            + "FROM\r\n"
+            + "	ESB_SERVICE_EVT \r\n"
+            + "WHERE\r\n"
+            + "	EVENT_NAME = 'CaptureIP_ChannelId' AND\r\n"
+            + "	CONVERT(DATE, EVENT_TIME) BETWEEN CAST(?1 AS DATE) AND\r\n"
+            + "	CAST(?2 AS DATE) \r\n"
+            + "GROUP BY\r\n"
+            + "	EVENT_TIME,\r\n"
+            + "	EVENT_KEY2,\r\n"
+            + "	EVENT_KEY1,\r\n"
+            + "	EVENT_NAME \r\n"
+            + "ORDER BY\r\n"
+            + "	SUBSTRING(EVENT_TIME,1,10)" ,nativeQuery = true)
+    List<Object> allServiceHitsPerDayForSql (String fromDate , String toDate);
+
 
 }

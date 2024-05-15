@@ -1493,3 +1493,43 @@ QUERY:
                 2024-04-30 12:18:40,191 [http-nio-8082-exec-4] DEBUG org.hibernate.SQL - select distinct e1_0.SERVICE_NAME from ESB_SERVICE_INF e1_0 where upper(e1_0.SERVICE_NAME) like upper(?) and e1_0.ISREADABLE=1 order by 1 asc
 QUERY:
                 2024-05-02 13:33:39,990 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - select distinct e1_0.SERVICE_NAME from ESB_SERVICE_INF e1_0 where upper(e1_0.SERVICE_NAME) like upper(?) and e1_0.ISREADABLE=1 order by 1 asc
+QUERY:
+                2024-05-15 11:25:20,914 [http-nio-8082-exec-1] DEBUG org.hibernate.SQL - SELECT
+	SUBSTRING(EVENT_TIME,1,10) as EVENT_TIME,
+	EVENT_NAME,
+	EVENT_KEY1,
+	EVENT_KEY2 AS CHANNEL,
+	COUNT(*)   AS THECOUNT 
+FROM
+	ESB_SERVICE_EVT 
+WHERE
+	EVENT_NAME = 'CaptureIP_ChannelId' AND
+	CONVERT(DATE, EVENT_TIME) BETWEEN CAST(? AS DATE) AND
+	CAST(? AS DATE) 
+GROUP BY
+	EVENT_TIME,
+	EVENT_KEY2,
+	EVENT_KEY1,
+	EVENT_NAME 
+ORDER BY
+	SUBSTRING(EVENT_TIME,1,10)
+QUERY:
+                2024-05-15 11:25:32,142 [http-nio-8082-exec-3] DEBUG org.hibernate.SQL - select
+    SUBSTR(EVENT_TIME, 1, 10) as EVENT_TIME,
+    EVENT_NAME,
+    EVENT_KEY1,
+    EVENT_KEY2 as CHANNEL,
+    count(*) as THECOUNT
+from
+    ESB_SERVICE_EVT
+where
+    EVENT_NAME = 'CaptureIP_ChannelId'
+   and  to_date(SUBSTR(EVENT_TIME, 1, 10), 'yyyy-mm-dd') between to_date(?, 'yyyy-mm-dd')
+   and to_date(?, 'yyyy-mm-dd')
+group by
+    SUBSTR(EVENT_TIME, 1, 10),
+    EVENT_KEY2,
+    EVENT_KEY1,
+    EVENT_NAME
+order by
+    SUBSTR(EVENT_TIME, 1, 10)
